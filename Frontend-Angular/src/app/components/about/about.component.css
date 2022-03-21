@@ -1,0 +1,30 @@
+.row {
+    padding: 0;
+    margin: 0;
+}
+.about {
+    padding-top: 4rem;
+    background-color: #101622;
+    color: white;
+}
+/*Estilo de la foto de perfil*/
+#foto-perfil{
+    position: relative;
+    width: 90%;
+    border-radius: 75%;
+    left: 10%;
+    bottom: 50px;
+}
+@media(max-width: 1024px){
+    #name{
+        position: relative;
+        left: -3%;
+    }
+    #foto-perfil{
+        position: relative;
+        width: 80%;
+        border-radius: 75%;
+        left: 0%;
+        top: 0%;
+    }
+}
