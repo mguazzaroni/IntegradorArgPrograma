@@ -1,0 +1,12 @@
+<div class="wrapper">
+    <h2>Proyectos</h2>
+    <div class="row">
+        <div class="block-repo col-sm-12 col-md-12 col-lg-4" *ngFor="let repo of repos">
+            <div class="block-repo-in">
+                <p>{{repo.created_at |date}}</p>
+                <p>{{repo.name}}</p>
+                <p>{{repo.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

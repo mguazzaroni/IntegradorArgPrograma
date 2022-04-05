@@ -1,0 +1,21 @@
+div {
+    background-color: #101622;
+    color: white;
+}
+.wrapper {
+    padding: 30px;
+    margin: 0;
+}
+h2 {
+    padding-bottom: 10px;
+}
+.block-repo {
+    height: 15rem;
+    padding: .25rem;
+    display: block;
+}
+.block-repo-in{
+    background-color: #13213cd1;
+    width: 100%;
+    height: 100%;      
+}
