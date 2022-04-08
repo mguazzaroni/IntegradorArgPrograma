@@ -7,20 +7,23 @@
     background-color: #101622;
     color: white;
 }
-#name {
-    
-}
 /*Estilo de la foto de perfil*/
-#foto-perfil{
+#foto-perfil {
     position: relative;
-    width: 60%;
+    width: 55%;
     bottom: 50px;
 }
 @media(max-width: 1024px){
-    #foto-perfil{
+    #foto-perfil {
         position: relative;
         width: 80%;
-        left: 10%;
         top: 0%;
+    }
+}
+
+@media(max-width: 575px){
+    #foto-perfil {
+        padding: 10px;
+        width: 40%;
     }
 }
