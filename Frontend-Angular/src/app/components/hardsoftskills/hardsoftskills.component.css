@@ -1,17 +1,7 @@
-div {
-    background-color: #101622;
-    color: white;
-}
 .wrapper {
     padding: 30px;
     margin: 0;
 }
 h2 {
     padding-bottom: 30px;
-}
-
-.separator::before{
-    border: 1px solid white;
-    padding: 1em 1.25em;
-    border-radius: 50%;
 }
