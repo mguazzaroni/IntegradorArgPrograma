@@ -8,21 +8,26 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Getter @Setter
-public class Person {
+public class Education {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column()
     private Long Id;
 
-    @Column(name = "Name")
+    @Column(name = "Title")
     @NotNull
-    private String Name;
+    private String Title;
 
-    @Column(name = "Surname")
+    @Column(name = "Institution")
     @NotNull
-    private String Surname;
+    private String Institution;
 
-    @Column(name = "Image")
-    private String Image;
+    @Column(name = "StartDate")
+    @NotNull
+    private String StartDate;
+
+    @Column(name = "EndDate")
+    @NotNull
+    private String EndDate;
 
 }

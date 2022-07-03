@@ -1,4 +1,4 @@
-package com.portfolio.backend.Service;
+package com.portfolio.backend.Interface;
 
 import com.portfolio.backend.Entity.Person;
 

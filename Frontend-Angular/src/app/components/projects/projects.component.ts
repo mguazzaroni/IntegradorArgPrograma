@@ -13,9 +13,7 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
     this.gitHubServices.loadRepos().subscribe(res => {
-      this.repos = res;
-      console.log(res);
-      
+      this.repos = res;      
     })
   }
 

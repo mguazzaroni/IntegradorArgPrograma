@@ -13,9 +13,9 @@ import { importType } from '@angular/compiler/src/output/output_ast';
 //Importo Circle-progress
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HardsoftskillsComponent } from './components/hardsoftskills/hardsoftskills.component';
-import { HttpClientModule } from '@angular/common/http';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
