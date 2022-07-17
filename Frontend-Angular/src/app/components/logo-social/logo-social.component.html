@@ -7,10 +7,15 @@
 
    <div class="section-2">
        <ul class="list-menu">
-           <li class="item-menu">
-               <a href="#">
+           <li class="item-menu" *ngIf="!isLogged">
+               <a href="/login" (click)="login()">
                    <img src="../../../assets/img/login.png" alt="login" class="social img-fluid" alt="login">
                </a>
+           </li>
+           <li class="item-menu" *ngIf="isLogged">
+                <a href="" (click)="onLogOut()">
+                  <img src="../../../assets/img/logout.png" alt="logout" class="social img-fluid" alt="logout">
+                </a>
            </li>
            <li class="item-menu">
                <a href="https://github.com/mguazzaroni">
@@ -25,5 +30,5 @@
            </li>
        </ul>
    </div>
-   
-</div>  
+
+</div>

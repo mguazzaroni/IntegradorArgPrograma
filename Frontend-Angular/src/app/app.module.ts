@@ -9,13 +9,15 @@ import { LogoSocialComponent } from './components/logo-social/logo-social.compon
 import { AboutComponent } from './components/about/about.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { EducationComponent } from './components/education/education.component';
-import { importType } from '@angular/compiler/src/output/output_ast';
 //Importo Circle-progress
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HardsoftskillsComponent } from './components/hardsoftskills/hardsoftskills.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,12 +31,16 @@ import { HttpClientModule } from '@angular/common/http';
     HardsoftskillsComponent,
     ProjectsComponent,
     FooterComponent,
+    HomeComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgCircleProgressModule.forRoot({}),
-    HttpClientModule
+    HttpClientModule,
+    BrowserModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

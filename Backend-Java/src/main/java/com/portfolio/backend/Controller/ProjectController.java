@@ -27,10 +27,10 @@ public class ProjectController{
         try {
             _service.saveProject(project);
 
-            return "El proyecto se guardo correctamente";
+            return "Saved";
         }
         catch (Exception ex){
-            return "Ocurrio un error al agregar un nuevo proyecto " + ex.getMessage();
+            return "An error has occurred " + ex.getMessage();
         }
     }
     @PutMapping("/projects/edit/{id}")
@@ -45,13 +45,13 @@ public class ProjectController{
         project.setDescription(newDescription);
         project.setProjectUrl(newUrl);
 
-        return "Se actualizo el proyecto correctamenet";
+        return "Updated successfully";
     }
 
     @DeleteMapping("/projects/delete/{id}")
     public String Delete(Long id){
         _service.deleteProject(id);
 
-        return "Se elimino el proyecto correctamente";
+        return "Deleted";
     }
 }

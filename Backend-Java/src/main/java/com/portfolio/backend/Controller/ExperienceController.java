@@ -3,6 +3,7 @@ package com.portfolio.backend.Controller;
 import com.portfolio.backend.Entity.Experience;
 import com.portfolio.backend.Service.ExperienceService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,17 +26,19 @@ public class ExperienceController {
         }
     }*/
     @PostMapping("/experience/new")
+    @PreAuthorize("hasRole('ADMIN')")
     public String Post(@RequestBody Experience experience){
         try{
             _service.saveExperience(experience);
-            return "La nueva experiencia se guardo correctamente";
+            return "Saved";
         }
         catch (Exception ex){
-            return "Ocurrio un error al guardar la experiencia " + ex.getMessage();
+            return "An error has occurred " + ex.getMessage();
         }
     }
 
     @PutMapping("/experience/edit/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public String Put(@PathVariable Long id,
                       @RequestParam("companyName") String newCompanyName,
                       @RequestParam("description") String newDescription,
@@ -50,20 +53,23 @@ public class ExperienceController {
             experience.setDescription(newDescription);
             experience.setStartDate(newStartDate);
             experience.setEndDate(newEndDate);
-            return "La experiencia se actualizo correctamente";
+
+            return "Updated successfully";
+
         }else{
-            return "No se encuentra experiencia con el id: " + id;
+            return "User id not found";
         }
 
     }
     @DeleteMapping("/experience/delete/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public String Delete(@PathVariable Long id){
         try {
             _service.deleteExperience(id);
-            return "Se elimino correctamente";
+            return "Deleted";
         }
         catch (Exception ex){
-            return "Ocurrio un error al eliminar " + ex.getMessage();
+            return "An error has occurred " + ex.getMessage();
         }
     }
 }

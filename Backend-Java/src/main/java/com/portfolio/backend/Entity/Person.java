@@ -22,6 +22,14 @@ public class Person {
     @NotNull
     private String Surname;
 
+    @Column(name = "Description")
+    @NotNull
+    private String Description;
+
+    @Column(name = "Profession")
+    @NotNull
+    private String Profession;
+
     @Column(name = "Image")
     private String Image;
 

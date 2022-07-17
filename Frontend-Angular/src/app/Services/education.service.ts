@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Education } from '../models/Education';
+import { Education } from '../models/education';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +12,8 @@ export class EducationService {
   //Hago uso de HTTPClient para peticiones http
   constructor(private http: HttpClient) { }
 
-  //Metodo para traer la educacion, es un observable
-  public getEducation(): Observable<Education> {
-    return this.http.get<Education>(this.URL + '/all');
+  //Metodo para traer la educacion, es un observable, maneja las peticiones y respuestas asincronas
+  public getEducationList(): Observable<Education[]> {
+    return this.http.get<Education[]>(this.URL + '/all');
   }
 }
