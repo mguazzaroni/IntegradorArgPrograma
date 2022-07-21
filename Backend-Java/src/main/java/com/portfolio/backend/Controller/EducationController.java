@@ -1,10 +1,8 @@
 package com.portfolio.backend.Controller;
 
 import com.portfolio.backend.Entity.Education;
-import com.portfolio.backend.Entity.Experience;
 import com.portfolio.backend.Service.EducationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
