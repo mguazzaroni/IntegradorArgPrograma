@@ -1,0 +1,55 @@
+<div class="abs-center">
+  <form (ngSubmit)="onUpdate()" novalidate #form="ngForm" class="p-3 form">
+    <h2 class="pb-3 form-group text-center">Editar estudio</h2>
+    <h2 *ngIf="!educ" class="pb-3 form-group text-center">Error</h2>
+    <div class="form-group">
+      <label>Institución</label>
+      <input
+        type="text"
+        name="companyName"
+        id="companyName"
+        class="form-control"
+        [(ngModel)]="educ.institution"
+        placeholder="Google"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label>Titulo otorgado</label>
+      <input
+        type="text"
+        name="activity"
+        id="activity"
+        class="form-control"
+        [(ngModel)]="educ.title"
+        placeholder="Desarrollador"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label>Desde</label>
+      <input
+        type="month"
+        name="startDate"
+        id="startDate"
+        [(ngModel)]="educ.startDate"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label>Hasta</label>
+      <input
+        type="month"
+        name="endDate"
+        id="enDate"
+        [(ngModel)]="educ.endDate"
+        class="form-control"
+      />
+    </div>
+    <div class="pt-2 button">
+      <button type="submit" class="btn btn-outline-success">Guardar</button>
+      <button routerLink="" class="btn btn-outline-danger">Cancelar</button>
+    </div>
+  </form>
+</div>

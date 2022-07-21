@@ -35,11 +35,12 @@ public class PersonController {
         }
     }
 
-    @PutMapping("/persons/edit/{id}")
+    @PutMapping("/persons/update/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public String Put(@PathVariable Long id,
                       @RequestParam("name") String newName,
                       @RequestParam("surname") String newSurname,
+                      @RequestParam("profession") String newProfession,
                       @RequestParam("image") String newImage)
     {
         try{
@@ -47,6 +48,7 @@ public class PersonController {
 
             person.setName(newName);
             person.setSurname(newSurname);
+            person.setProfession(newProfession);
             person.setImage(newImage);
 
             _service.savePerson(person);

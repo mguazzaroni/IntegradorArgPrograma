@@ -3,10 +3,10 @@ package com.portfolio.backend.Controller;
 import com.portfolio.backend.Entity.Experience;
 import com.portfolio.backend.Service.ExperienceService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200/")
@@ -19,14 +19,13 @@ public class ExperienceController {
     public List<Experience> getAll(){
         return _service.getExperienceList();
     }
-    /*@GetMapping("/experience/get/{id}")
-    public Experience getExperience(@PathVariable Long id){
-        try{
-            return _service.
-        }
-    }*/
+    @GetMapping("/experience/get/{id}")
+    public Optional<Experience> getExperience(@PathVariable Long id){
+
+       return _service.findExperienceById(id);
+    }
     @PostMapping("/experience/new")
-    @PreAuthorize("hasRole('ADMIN')")
+   //  @PreAuthorize("hasRole('ADMIN')")
     public String Post(@RequestBody Experience experience){
         try{
             _service.saveExperience(experience);
@@ -37,8 +36,8 @@ public class ExperienceController {
         }
     }
 
-    @PutMapping("/experience/edit/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PutMapping("/experience/update/{id}")
+    // @PreAuthorize("hasRole('ADMIN')")
     public String Put(@PathVariable Long id,
                       @RequestParam("companyName") String newCompanyName,
                       @RequestParam("description") String newDescription,
@@ -62,7 +61,7 @@ public class ExperienceController {
 
     }
     @DeleteMapping("/experience/delete/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    // @PreAuthorize("hasRole('ADMIN')")
     public String Delete(@PathVariable Long id){
         try {
             _service.deleteExperience(id);

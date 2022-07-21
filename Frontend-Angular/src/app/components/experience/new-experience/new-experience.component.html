@@ -1,0 +1,25 @@
+<div class="abs-center">
+  <form (ngSubmit)="onCreate()" class="p-3 form">
+    <h2 class="pb-3 form-group text-center">Nueva experiencia laboral</h2>
+    <div class="form-group">
+      <label>Empresa</label>
+      <input type="text" name="companyName" id="companyName" class="form-control" [(ngModel)]="companyName" placeholder="Google" required>
+    </div>
+    <div class="form-group">
+      <label>Actividad</label>
+      <input type="text" name="activity" id="activity" class="form-control" [(ngModel)]="activity" placeholder="Desarrollador" required>
+    </div>
+    <div class="form-group">
+      <label>Desde</label>
+      <input type="month" name="startDate" id="startDate" [(ngModel)]="startDate" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label>Hasta</label>
+      <input type="month" name="endDate" id="enDate" [(ngModel)]="endDate" class="form-control">
+    </div>
+    <div class="pt-2 button">
+      <button type="submit" class="btn btn-outline-success">Guardar</button>
+      <button routerLink="" class="btn btn-outline-danger">Cancelar</button>
+    </div>
+  </form>
+</div>

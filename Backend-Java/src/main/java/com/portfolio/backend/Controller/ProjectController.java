@@ -33,7 +33,7 @@ public class ProjectController{
             return "An error has occurred " + ex.getMessage();
         }
     }
-    @PutMapping("/projects/edit/{id}")
+    @PutMapping("/projects/update/{id}")
     public String Put(@PathVariable Long id,
                       @RequestParam("name") String newName,
                       @RequestParam("description") String newDescription,

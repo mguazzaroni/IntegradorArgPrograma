@@ -1,19 +1,30 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { Education } from '../models/education';
 import { Person } from '../models/person';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonService {
-  URL = "http://localhost:8080"; //Url del servidor local, cambiar cuando haga el deploy del backend
+  baseURL = environment.baseURL; //Url del servidor local, cambiar cuando haga el deploy del backend
 
   //Hago uso de HTTPClient para peticiones http
-  constructor(private http: HttpClient) {}
+  constructor(private httpClient: HttpClient) {}
 
   //Metodo para traer las personas, en este caso 1, es un observable
   public getPerson(): Observable<Person[]> {
-    return this.http.get<Person[]>(this.URL + '/persons/get/profile');
+    return this.httpClient.get<Person[]>(`${this.baseURL}/persons/get/profile`);
+  }
+  public newEducation(education: Education): Observable<any>{
+    return this.httpClient.post<any>(`${this.baseURL}/persons/new`, education);
+  }
+  public updateExperience(id: number, education: Education): Observable<any>{
+    return this.httpClient.put<any>(`${this.baseURL}/persons/edit/${id}`, education);
+  }
+  public delete(id: number): Observable<any>{
+    return this.httpClient.delete<any>(`${this.baseURL}/persons/delete/${id}`);
   }
 }

@@ -18,6 +18,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { interceptorProvider } from './Services/interceptor-service';
+import { NewExperienceComponent } from './components/experience/new-experience/new-experience.component';
+import { EditExperienceComponent } from './components/experience/edit-experience/edit-experience.component';
+import { NewEducationComponent } from './components/education/new-education/new-education.component';
+import { EditEducationComponent } from './components/education/edit-education/edit-education.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +38,10 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     HomeComponent,
     LoginComponent,
+    NewExperienceComponent,
+    EditExperienceComponent,
+    NewEducationComponent,
+    EditEducationComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +51,9 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [
+    interceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
