@@ -1,7 +1,6 @@
 package com.portfolio.backend.Service;
 
 import com.portfolio.backend.Entity.Education;
-import com.portfolio.backend.Entity.Experience;
 import com.portfolio.backend.Interface.IEducationService;
 import com.portfolio.backend.Repository.IEducationRepository;
 import org.springframework.beans.factory.annotation.Autowired;

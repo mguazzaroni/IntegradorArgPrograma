@@ -38,20 +38,16 @@ public class ExperienceController {
 
     @PutMapping("/experience/update/{id}")
     // @PreAuthorize("hasRole('ADMIN')")
-    public String Put(@PathVariable Long id,
-                      @RequestParam("companyName") String newCompanyName,
-                      @RequestParam("description") String newDescription,
-                      @RequestParam("startDate") String newStartDate,
-                      @RequestParam("endDate") String newEndDate){
+    public String Put(@PathVariable Long id, @RequestBody Experience experience){
 
-        Experience experience = _service.getExperienceById(id);
+        _service.getExperienceById(id);
 
         if(experience != null){
             //Si encuentra por id, lo actualizo
-            experience.setCompanyName(newCompanyName);
-            experience.setDescription(newDescription);
-            experience.setStartDate(newStartDate);
-            experience.setEndDate(newEndDate);
+            experience.setCompanyName(experience.getCompanyName());
+            experience.setDescription(experience.getDescription());
+            experience.setStartDate(experience.getStartDate());
+            experience.setEndDate(experience.getEndDate());
 
             return "Updated successfully";
 

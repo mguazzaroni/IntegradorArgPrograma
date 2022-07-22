@@ -30,9 +30,7 @@ export class EditExperienceComponent implements OnInit {
           data.id
         );
       },
-      (error) => {
-        
-      }
+      (error) => {}
     );
   }
 
@@ -42,7 +40,7 @@ export class EditExperienceComponent implements OnInit {
         this.router.navigate(['']);
       },
       (error) => {
-        alert('An error has occurred');
+        this.router.navigate(['']);
       }
     );
   }

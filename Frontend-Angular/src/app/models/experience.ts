@@ -4,7 +4,7 @@ export class Experience{
   description: string;
   startDate: string;
   endDate: string;
-
+  
   constructor(companyName: string, description: string, startDate: string, endDate: string, id?: number){
     this.id = id;
     this.companyName = companyName;
@@ -12,4 +12,5 @@ export class Experience{
     this.startDate = startDate;
     this.endDate = endDate;
   }
+
 }

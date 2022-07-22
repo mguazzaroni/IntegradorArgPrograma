@@ -10,12 +10,14 @@ import { TokenService } from 'src/app/Services/token.service';
 export class LogoSocialComponent implements OnInit {
 
   isLogged!: boolean;
+  user: string;
 
   constructor(private router: Router, private tokenService: TokenService) { }
 
   ngOnInit(): void {
     if(this.tokenService.getToken()){
       this.isLogged = true;
+      this.user = this.tokenService.getUsername();
     } else {
       this.isLogged = false;
     }

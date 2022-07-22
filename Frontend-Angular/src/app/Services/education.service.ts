@@ -23,7 +23,17 @@ export class EducationService {
   public newEducation(educacion: Education): Observable<Education> {
     return this.http.post<any>(`${this.baseURL}/education/new`, educacion);
   }
-  public updateEducation(id: number, education: Education): Observable<Education[]> {
-    return this.http.put<any>(`${this.baseURL}/education/update/${id}`, education);
+  public updateEducation(
+    id: number,
+    education: Education
+  ): Observable<Education[]> {
+    return this.http.put<any>(
+      `${this.baseURL}/education/update/${id}`,
+      education
+    );
+  }
+  public delete(id: number): Observable<any> {
+    console.log('expSvcDelete', id);
+    return this.http.delete<any>(`${this.baseURL}/education/delete/${id}`);
   }
 }

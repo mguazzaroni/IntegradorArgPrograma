@@ -1,43 +1,44 @@
-<div class="table-responsive-md">
-  <div class="add-exp">
-    <h2>Experiencia Laboral</h2>
-    <button
-      routerLink="newexperience"
-      *ngIf="isLogged"
-      type="button"
-      class="pl-2 btn btn-outline-secondary"
-    >
-      Añadir
-    </button>
+<div class="wrapper">
+  <div class="table-responsive-md">
+    <div class="add-exp">
+      <h2>Experiencia Laboral</h2>
+      <button
+        routerLink="newexperience"
+        *ngIf="isLogged"
+        type="button"
+        class="pl-2 btn btn-outline-secondary"
+      >
+        Añadir
+      </button>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="col-3">Empresa</th>
+          <th class="col-4">Actividad</th>
+          <th class="col-1">Desde</th>
+          <th class="col-1">Hasta</th>
+          <th colspan="2" class="col-1" *ngIf="isLogged">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let exp of experience">
+          <td>{{ exp.companyName }}</td>
+          <td>{{ exp.description }}</td>
+          <td>{{ exp.startDate }}</td>
+          <td>{{ exp.endDate || "Actualidad" }}</td>
+          <td *ngIf="isLogged">
+            <a routerLink="editexperience/{{ exp.id }}"
+              ><i class="bi bi-pencil-fill"></i
+            ></a>
+          </td>
+          <td *ngIf="isLogged">
+            <a href="#" (click)="onDelete(exp.id)"
+              ><i class="bi bi-trash3-fill"></i
+            ></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th class="col-2">Empresa</th>
-        <th class="col-4">Actividad</th>
-        <th class="col-2">Desde</th>
-        <th class="col-2">Hasta</th>
-        <th *ngIf="isLogged"></th>
-        <th *ngIf="isLogged"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let exp of experience">
-        <td>{{ exp.companyName }}</td>
-        <td>{{ exp.description }}</td>
-        <td>{{ exp.startDate }}</td>
-        <td>{{ exp.endDate || "Actualidad" }}</td>
-        <td *ngIf="isLogged">
-          <a routerLink="editexperience/{{ exp.id }}"
-            ><i class="bi bi-pencil-fill"></i
-          ></a>
-        </td>
-        <td *ngIf="isLogged">
-          <a href="#" (click)="onDelete(exp.id)"
-            ><i class="bi bi-trash3-fill"></i
-          ></a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
 </div>

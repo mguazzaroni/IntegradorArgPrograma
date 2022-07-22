@@ -1,19 +1,21 @@
+.wrapper{
+  padding: 30px;
+  margin: 0;
+}
 .row {
   padding: 30px;
   margin: 0;
 }
-.table td, .table th {
-padding: 0.75rem;
-vertical-align: top;
-border-top: none;
+.table td,
+.table th {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: none;
 }
 .table {
-color: white;
+  color: white;
 }
-.table-responsive-md{
-padding: 40px;
-}
-.add-educ{
+.add-educ {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -24,4 +26,6 @@ h2 {
 button {
   color: white;
 }
-
+a {
+  color: white;
+}

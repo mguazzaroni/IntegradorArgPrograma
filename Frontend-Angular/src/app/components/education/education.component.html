@@ -1,28 +1,47 @@
-<div class="table-responsive-md">
+<div class="wrapper">
   <div class="add-educ">
-      <h2>Estudios</h2>
-      <button *ngIf="isLogged" routerLink="neweducation" type="button" class="pl-2 btn btn-outline-secondary">Añadir</button>
-    </div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th class="col-2">Institución</th>
-        <th class="col-4">Titulo otorgado</th>
-        <th class="col-2">Desde</th>
-        <th class="col-2">Hasta</th>
-        <th *ngIf="isLogged"></th>
-        <th *ngIf="isLogged"></th>
-      </tr>
-    </thead>
-    <tbody  >
-      <tr *ngFor="let edu of education">
-        <td>{{edu.institution}}</td>
-        <td>{{edu.title}}</td>
-        <td>{{edu.startDate}}</td>
-        <td>{{edu.endDate || "Actualidad"}}</td>
-        <td *ngIf="isLogged"><i class="bi bi-pencil-fill"></i></td> <!--Editar-->
-        <td *ngIf="isLogged"><i class="bi bi-trash3-fill"></i></td> <!--Borrar-->
-      </tr>
-    </tbody>
-  </table>
+    <h2>Estudios</h2>
+    <button
+      *ngIf="isLogged"
+      routerLink="neweducation"
+      type="button"
+      class="pl-2 btn btn-outline-secondary"
+    >
+      Añadir
+    </button>
+  </div>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="col-2">Institución</th>
+          <th class="col-4">Titulo otorgado</th>
+          <th class="col-1">Desde</th>
+          <th class="col-1">Hasta</th>
+          <th colspan="2" class="col-1" *ngIf="isLogged">Acciones</th>
+          <!-- <th class="col-1" *ngIf="isLogged"></th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let edu of education">
+          <td>{{ edu.institution }}</td>
+          <td>{{ edu.title }}</td>
+          <td>{{ edu.startDate }}</td>
+          <td>{{ edu.endDate || "Actualidad" }}</td>
+          <!--Editar-->
+          <td *ngIf="isLogged">
+            <a routerLink="editeducation/{{ edu.id }}"
+              ><i class="bi bi-pencil-fill"></i
+            ></a>
+          </td>
+          <!--Borrar-->
+          <td *ngIf="isLogged">
+            <a href="#" (click)="onDelete(edu.id)"
+              ><i class="bi bi-trash3-fill"></i
+            ></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

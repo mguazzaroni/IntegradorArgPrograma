@@ -1,6 +1,11 @@
 .wrapper {
-    padding: 30px;
+  padding: 30px;
+  background-color: #001e30;
 }
 .footer {
-    text-align: center;
+  text-align: center;
+  margin: 0;
+}
+.footer-text{
+  margin: 0;
 }

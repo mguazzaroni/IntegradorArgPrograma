@@ -19,21 +19,22 @@ export class EditEducationComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
-    this.educService.getEducation(this.id).subscribe((data) => {
-      this.educ = new Education(
-        data.title,
-        data.institution,
-        data.startDate,
-        data.endDate,
-        data.id
-      );
-    }, (error) => {
-
-    });
+    this.educService.getEducation(this.id).subscribe(
+      (data) => {
+        this.educ = data;
+      },
+      (error) => {}
+    );
   }
 
-  onUpdate(): void{
-    this.educService.updateEducation(this.id, this.educ).subscribe()
+  onUpdate(): void {
+    this.educService.updateEducation(this.id, this.educ).subscribe(
+      (res) => {
+        this.router.navigate(['']);
+      },
+      (error) => {
+        alert('An error has occurred');
+      }
+    );
   }
 }

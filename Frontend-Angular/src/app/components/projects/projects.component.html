@@ -1,16 +1,25 @@
 <div class="wrapper">
   <h2 class="pb-3">Proyectos</h2>
   <div class="row">
-    <div class="col-sm-12 col-md-12 col-lg-4 block-repo" *ngFor="let repo of repos">
+    <div
+      class="col-sm-12 col-md-12 col-lg-4 block-repo"
+      *ngFor="let repo of repos"
+    >
       <div class="card text-center block-repo-in">
         <div class="card-body">
-          <h5 class="card-title">{{repo.name}}</h5>
-          <p class="card-title">{{repo.created_at |date}}</p>
-          <p class="card-text">{{repo.description}}</p>
-          <a href="{{repo.html_url}}" class="btn btn-outline-primary" target="__blank" >Ir a GitHub</a>
+          <h5 class="card-title">{{ repo.name }}</h5>
+          <p class="card-title">{{ repo.created_at | date }}</p>
+          <p class="card-text">{{ repo.description }}</p>
+          <div>
+            <a
+              href="{{ repo.html_url }}"
+              class="btn btn-outline-light"
+              target="__blank"
+              >Ir a GitHub</a
+            >
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
