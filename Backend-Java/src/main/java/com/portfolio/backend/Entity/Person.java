@@ -33,4 +33,14 @@ public class Person {
     @Column(name = "Image")
     private String Image;
 
+    public Person() {
+    }
+
+    public Person(String name, String surname, String description, String profession, String image) {
+        Name = name;
+        Surname = surname;
+        Description = description;
+        Profession = profession;
+        Image = image;
+    }
 }

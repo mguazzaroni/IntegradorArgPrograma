@@ -1,7 +1,6 @@
 package com.portfolio.backend.Security.Entity;
 
 import com.portfolio.backend.Security.Enums.RoleName;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 

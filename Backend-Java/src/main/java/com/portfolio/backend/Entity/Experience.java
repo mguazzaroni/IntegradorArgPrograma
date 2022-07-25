@@ -30,4 +30,13 @@ public class Experience {
     @NotNull
     private String EndDate;
 
+    public Experience() {
+    }
+
+    public Experience(String companyName, String description, String startDate, String endDate) {
+        CompanyName = companyName;
+        Description = description;
+        StartDate = startDate;
+        EndDate = endDate;
+    }
 }

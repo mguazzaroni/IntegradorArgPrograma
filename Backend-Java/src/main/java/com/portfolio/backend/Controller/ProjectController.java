@@ -10,6 +10,9 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins = "http://localhost:4200/")
 
+/*Este controlador no se utiliza ya que los proyectos los muestro
+con un servicio en Angular usando la API de Github */
+
 public class ProjectController{
     @Autowired
     private ProjectService _service;

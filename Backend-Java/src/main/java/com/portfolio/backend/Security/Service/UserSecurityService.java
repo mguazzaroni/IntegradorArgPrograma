@@ -4,7 +4,6 @@ import com.portfolio.backend.Security.Entity.UserSecurity;
 import com.portfolio.backend.Security.Repository.IUserSecurityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
 import java.util.Optional;
 

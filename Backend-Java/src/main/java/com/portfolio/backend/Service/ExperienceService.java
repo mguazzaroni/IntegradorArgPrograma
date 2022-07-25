@@ -5,10 +5,7 @@ import com.portfolio.backend.Interface.IExperienceService;
 import com.portfolio.backend.Repository.IExperienceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-import java.util.Optional;
-
 @Service
 public class ExperienceService implements IExperienceService {
 
@@ -25,9 +22,8 @@ public class ExperienceService implements IExperienceService {
         return _repository.getById(id);
     }
 
-    public Optional<Experience> findExperienceById(Long id){
-        return _repository.findById(id);
-    }
+    @Override
+    public Boolean existsExperienceById(Long id){ return _repository.existsById(id); }
     @Override
     public void saveExperience(Experience experience) {
         _repository.save(experience);

@@ -5,9 +5,8 @@ import com.portfolio.backend.Interface.IEducationService;
 import com.portfolio.backend.Repository.IEducationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 public class EducationService implements IEducationService {
@@ -25,8 +24,9 @@ public class EducationService implements IEducationService {
         return _repository.getById(id);
     }
 
-    public Optional<Education> findEducationById(Long id){
-        return _repository.findById(id);
+    @Override
+    public Boolean existsEducationById(Long id){
+        return _repository.existsById(id);
     }
 
     @Override

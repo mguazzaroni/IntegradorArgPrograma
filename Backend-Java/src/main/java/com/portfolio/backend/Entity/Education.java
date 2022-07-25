@@ -30,4 +30,11 @@ public class Education {
     @NotNull
     private String EndDate;
 
+    public Education() {}
+    public Education(String title, String institution, String startDate, String endDate) {
+        Title = title;
+        Institution = institution;
+        StartDate = startDate;
+        EndDate = endDate;
+    }
 }
