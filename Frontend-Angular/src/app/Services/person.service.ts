@@ -16,15 +16,15 @@ export class PersonService {
 
   //Metodo para traer las personas, en este caso 1, es un observable
   public getPerson(): Observable<Person[]> {
-    return this.httpClient.get<Person[]>(`${this.baseURL}/persons/get/profile`);
+    return this.httpClient.get<Person[]>(`${this.baseURL}/person/get/profile`);
   }
   public newEducation(education: Education): Observable<any>{
-    return this.httpClient.post<any>(`${this.baseURL}/persons/new`, education);
+    return this.httpClient.post<any>(`${this.baseURL}/person/new`, education);
   }
   public updateExperience(id: number, education: Education): Observable<any>{
-    return this.httpClient.put<any>(`${this.baseURL}/persons/edit/${id}`, education);
+    return this.httpClient.put<any>(`${this.baseURL}/person/edit/${id}`, education);
   }
   public delete(id: number): Observable<any>{
-    return this.httpClient.delete<any>(`${this.baseURL}/persons/delete/${id}`);
+    return this.httpClient.delete<any>(`${this.baseURL}/person/delete/${id}`);
   }
 }
