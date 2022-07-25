@@ -1,6 +1,11 @@
 .wrapper {
-  padding: 30px;
-  background-color: #001e30;
+  display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    align-items: center;
+    align-content: center;
+    height: 75px;
+    padding: 0 3rem 0 3rem;
 }
 .footer {
   text-align: center;
@@ -8,4 +13,22 @@
 }
 .footer-text{
   margin: 0;
+}
+div {
+  background-color: #001e30;
+}
+.social-list ul {
+  display: flex;
+  list-style-type: none;
+  margin-top: 20px;
+}
+.social{
+  width: auto;
+  height: 30px;
+}
+.item-menu{
+  padding: 0 1rem;
+}
+#linkedin {
+  padding-bottom: 3px;
 }
