@@ -9,6 +9,7 @@ public interface IEducationService{
     public List<Education> getEducationList();
     public Education getEducationById(Long id);
     public Boolean existsEducationById(Long id);
+    public Education findEducationById(Long id);
     public void saveEducation(Education education);
     public void deleteEducation(Long id);
 }

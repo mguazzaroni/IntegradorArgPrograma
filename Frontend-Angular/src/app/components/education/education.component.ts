@@ -37,7 +37,7 @@ export class EducationComponent implements OnInit {
   }
 
   onDelete(id: number): void {
-    if (this.id != undefined) {
+    if (id != undefined) {
       this.eduService.delete(id).subscribe(
         (res) => {
           this.listEducation();

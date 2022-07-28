@@ -29,3 +29,6 @@ button {
 a {
   color: white;
 }
+.delete {
+  cursor: pointer;
+ }

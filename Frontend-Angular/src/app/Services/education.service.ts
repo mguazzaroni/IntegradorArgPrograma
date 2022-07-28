@@ -33,7 +33,6 @@ export class EducationService {
     );
   }
   public delete(id: number): Observable<any> {
-    console.log('expSvcDelete', id);
     return this.http.delete<any>(`${this.baseURL}/education/delete/${id}`);
   }
 }

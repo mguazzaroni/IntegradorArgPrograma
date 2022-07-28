@@ -1,10 +1,9 @@
 package com.portfolio.backend.Controller;
 
 import com.portfolio.backend.Entity.Project;
-import com.portfolio.backend.Service.ProjectService;
+import com.portfolio.backend.Interface.IProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -15,7 +14,7 @@ con un servicio en Angular usando la API de Github */
 
 public class ProjectController{
     @Autowired
-    private ProjectService _service;
+    private IProjectService _service;
 
     @GetMapping("/projects/all")
     public List<Project> GetAll(){

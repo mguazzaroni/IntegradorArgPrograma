@@ -1,7 +1,10 @@
+<app-header></app-header>
 <div class="abs-center">
-  <form (ngSubmit)="onUpdate()" novalidate #form="ngForm" class="p-3 form">
+  <div id="error">
+    <h2 *ngIf="!exp" class="text-center">Ha ocurrido un error.</h2>
+  </div>
+  <form (ngSubmit)="onUpdate()" *ngIf="exp" novalidate #form="ngForm" class="p-3 form">
     <h2 class="pb-3 form-group text-center">Editar experiencia laboral</h2>
-    <h2 *ngIf="!exp" class="pb-3 form-group text-center">Error</h2>
     <div class="form-group">
       <label>Empresa</label>
       <input
@@ -53,3 +56,4 @@
     </div>
   </form>
 </div>
+<app-footer></app-footer>

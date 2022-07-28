@@ -25,11 +25,11 @@ public class ExperienceController {
     }
     @GetMapping("/experience/get/{id}")
     public ResponseEntity<Experience> getExperienceById(@PathVariable Long id){
-       if(!_service.existsExperienceById(id)){
+       if(_service.findExperienceById(id) == null){
            return new ResponseEntity(new Response("The id does not exist"), HttpStatus.NOT_FOUND);
        }
 
-       Experience experience = _service.getExperienceById(id);
+       Experience experience = _service.findExperienceById(id);
 
        return new ResponseEntity<Experience>(experience, HttpStatus.OK);
     }

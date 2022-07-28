@@ -2,23 +2,20 @@ package com.portfolio.backend.Controller;
 
 import com.portfolio.backend.DTO.EducationDTO;
 import com.portfolio.backend.Entity.Education;
+import com.portfolio.backend.Interface.IEducationService;
 import com.portfolio.backend.Response.Response;
-import com.portfolio.backend.Service.EducationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.management.remote.rmi.RMIConnectionImpl_Stub;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 public class EducationController {
 
     @Autowired
-    private EducationService _service;
+    private IEducationService _service;
 
     @GetMapping("/education/all")
     public ResponseEntity<List<Education>> GetAll(){
@@ -29,10 +26,10 @@ public class EducationController {
     @GetMapping("/education/get/{id}")
     public ResponseEntity<Education> getEducation(@PathVariable Long id){
 
-        if(!_service.existsEducationById(id)){
+        if(_service.findEducationById(id) == null){
             return new ResponseEntity(new Response("The id does not exist"), HttpStatus.NOT_FOUND);
         }
-        Education education = _service.getEducationById(id);
+        Education education = _service.findEducationById(id);
 
         return new ResponseEntity<Education>(education, HttpStatus.OK);
     }
