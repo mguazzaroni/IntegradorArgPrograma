@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
-
 @Service
 public class EducationService implements IEducationService {
 
@@ -27,6 +26,11 @@ public class EducationService implements IEducationService {
     @Override
     public Boolean existsEducationById(Long id){
         return _repository.existsById(id);
+    }
+
+    @Override
+    public Education findEducationById(Long id) {
+        return _repository.findById(id).get();
     }
 
     @Override

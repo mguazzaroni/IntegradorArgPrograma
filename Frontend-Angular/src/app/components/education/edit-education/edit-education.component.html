@@ -1,8 +1,10 @@
 <app-header></app-header>
 <div class="abs-center">
-  <form (ngSubmit)="onUpdate()" novalidate #form="ngForm" class="p-3 form">
-    <h2 class="pb-3 form-group text-center">Editar estudio</h2>
-    <h2 *ngIf="!educ" class="pb-3 form-group text-center">Error</h2>
+  <div id="error">
+    <h2 *ngIf="!educ" class="text-center">Ha ocurrido un error.</h2>
+  </div>
+  <form (ngSubmit)="onUpdate()" *ngIf="educ" novalidate #form="ngForm" class="p-3 form">
+    <h2 class="form-group text-center">Editar estudio</h2>
     <div class="form-group">
       <label>Institución</label>
       <input

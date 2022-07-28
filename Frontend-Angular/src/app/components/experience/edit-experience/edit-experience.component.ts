@@ -44,4 +44,7 @@ export class EditExperienceComponent implements OnInit {
       }
     );
   }
+  onDelete(id: Number): void {
+    
+  }
 }

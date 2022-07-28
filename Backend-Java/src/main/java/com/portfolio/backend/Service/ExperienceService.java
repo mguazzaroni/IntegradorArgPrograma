@@ -24,6 +24,12 @@ public class ExperienceService implements IExperienceService {
 
     @Override
     public Boolean existsExperienceById(Long id){ return _repository.existsById(id); }
+
+    @Override
+    public Experience findExperienceById(Long id) {
+        return _repository.findById(id).get();
+    }
+
     @Override
     public void saveExperience(Experience experience) {
         _repository.save(experience);
