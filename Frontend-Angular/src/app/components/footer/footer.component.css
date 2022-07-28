@@ -32,3 +32,21 @@ div {
 #linkedin {
   padding-bottom: 3px;
 }
+
+@media(max-width: 575px){
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .social-list ul {
+    display: flex;
+    list-style-type: none;
+    margin-top: 20px;
+  }
+  .list-menu {
+    padding: 0;
+  }
+}
