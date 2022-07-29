@@ -15,6 +15,8 @@ export class PersonService {
   constructor(private httpClient: HttpClient) {}
 
   //Metodo para traer las personas, en este caso 1, es un observable
+  //Viene hardcodeado desde el backend para devolver siempre el mismo perfil
+  //TODO: Hacer que cada usuario que se loguee tenga un perfil con foto
   public getPerson(): Observable<Person[]> {
     return this.httpClient.get<Person[]>(`${this.baseURL}/person/get/profile`);
   }
