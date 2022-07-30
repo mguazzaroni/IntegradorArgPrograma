@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseURL: 'http://localhost:8080'
+  baseURL: 'https://afternoon-peak-67646.herokuapp.com/'
 };
