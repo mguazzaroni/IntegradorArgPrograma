@@ -13,29 +13,28 @@ export class ExperienceService {
   constructor(private httpClient: HttpClient) {}
 
   public getAllExperience(): Observable<Experience[]> {
-    return this.httpClient.get<Experience[]>(`${this.baseURL}/experience/all`);
+    return this.httpClient.get<Experience[]>(`${this.baseURL}experience/all`);
   }
   public getExperience(id: number): Observable<Experience> {
     return this.httpClient.get<Experience>(
-      `${this.baseURL}/experience/get/${id}`
+      `${this.baseURL}experience/get/${id}`
     );
   }
   public newExperience(experience: Experience): Observable<any> {
     return this.httpClient.post<any>(
-      `${this.baseURL}/experience/new`,
+      `${this.baseURL}experience/new`,
       experience
     );
   }
   public updateExperience(id: number, experience: Experience): Observable<any> {
     return this.httpClient.put<any>(
-      `${this.baseURL}/experience/update/${id}`,
+      `${this.baseURL}experience/update/${id}`,
       experience
     );
   }
   public delete(id: number): Observable<any> {
-    console.log('expSvcDelete', id);
     return this.httpClient.delete<any>(
-      `${this.baseURL}/experience/delete/${id}`
+      `${this.baseURL}experience/delete/${id}`
     );
   }
 }

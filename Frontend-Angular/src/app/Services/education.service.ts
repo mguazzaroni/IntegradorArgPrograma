@@ -15,13 +15,13 @@ export class EducationService {
 
   //Metodo para traer la educacion, es un observable, maneja las peticiones y respuestas asincronas
   public getEducationList(): Observable<Education[]> {
-    return this.http.get<Education[]>(`${this.baseURL}/education/all`);
+    return this.http.get<Education[]>(`${this.baseURL}education/all`);
   }
   public getEducation(id: number): Observable<Education> {
-    return this.http.get<Education>(`${this.baseURL}/education/get/${id}`);
+    return this.http.get<Education>(`${this.baseURL}education/get/${id}`);
   }
   public newEducation(educacion: Education): Observable<Education> {
-    return this.http.post<any>(`${this.baseURL}/education/new`, educacion);
+    return this.http.post<any>(`${this.baseURL}education/new`, educacion);
   }
   public updateEducation(
     id: number,

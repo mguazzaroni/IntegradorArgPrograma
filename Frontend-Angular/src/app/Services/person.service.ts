@@ -18,15 +18,15 @@ export class PersonService {
   //Viene hardcodeado desde el backend para devolver siempre el mismo perfil
   //TODO: Hacer que cada usuario que se loguee tenga un perfil con foto
   public getPerson(): Observable<Person[]> {
-    return this.httpClient.get<Person[]>(`${this.baseURL}/person/get/profile`);
+    return this.httpClient.get<Person[]>(`${this.baseURL}person/get/profile`);
   }
   public newEducation(education: Education): Observable<any>{
-    return this.httpClient.post<any>(`${this.baseURL}/person/new`, education);
+    return this.httpClient.post<any>(`${this.baseURL}person/new`, education);
   }
   public updateExperience(id: number, education: Education): Observable<any>{
-    return this.httpClient.put<any>(`${this.baseURL}/person/edit/${id}`, education);
+    return this.httpClient.put<any>(`${this.baseURL}person/edit/${id}`, education);
   }
   public delete(id: number): Observable<any>{
-    return this.httpClient.delete<any>(`${this.baseURL}/person/delete/${id}`);
+    return this.httpClient.delete<any>(`${this.baseURL}person/delete/${id}`);
   }
 }
